@@ -23,9 +23,9 @@
     <script>
         async function fetchDistance() {
             try {
-                const response = await fetch('https://api.example.com/voyager-distance');
+                const response = await fetch('https://voyager.jpl.nasa.gov/ticker/hds/');
                 const data = await response.json();
-                document.getElementById('distance').innerText = `Voyager 1 is currently ${data.distance} kilometers from Earth`;
+                document.getElementById('distance').innerText = `Voyager 1 is currently ${data.voyager1.distance_km} kilometers from Earth`;
             } catch (error) {
                 console.error('Error fetching distance:', error);
             }
