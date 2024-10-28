@@ -14,10 +14,17 @@
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
+            position: relative;
         }
         h1 {
             font-size: 5em;
             text-align: center;
+        }
+        .update-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 1em;
         }
     </style>
     <script>
@@ -31,11 +38,12 @@
             }
         }
 
-        setInterval(fetchDistance, 60000); // Update every 60 seconds
+        setInterval(fetchDistance, 15000); // Update every 15 seconds
         window.onload = fetchDistance;
     </script>
 </head>
 <body>
     <h1 id="distance">Loading...</h1>
+    <div class="update-info">Updates every 15 seconds</div>
 </body>
 </html>
