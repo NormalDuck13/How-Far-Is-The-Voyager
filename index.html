@@ -20,8 +20,22 @@
             text-align: center;
         }
     </style>
+    <script>
+        async function fetchDistance() {
+            try {
+                const response = await fetch('https://api.example.com/voyager-distance');
+                const data = await response.json();
+                document.getElementById('distance').innerText = `Voyager 1 is currently ${data.distance} kilometers from Earth`;
+            } catch (error) {
+                console.error('Error fetching distance:', error);
+            }
+        }
+
+        setInterval(fetchDistance, 60000); // Update every 60 seconds
+        window.onload = fetchDistance;
+    </script>
 </head>
 <body>
-    <h1>Voyager 1 is currently 24,770,405,772 kilometers from Earth</h1>
+    <h1 id="distance">Loading...</h1>
 </body>
 </html>
